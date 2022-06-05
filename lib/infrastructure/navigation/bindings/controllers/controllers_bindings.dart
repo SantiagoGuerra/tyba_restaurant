@@ -1,0 +1,1 @@
+export 'package:tyba_restaurant/infrastructure/navigation/bindings/controllers/home.controller.binding.dart'; 

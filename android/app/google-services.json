@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "455281700041",
+    "project_id": "tyba-example1",
+    "storage_bucket": "tyba-example1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:455281700041:android:8b2760174817ae9dbef118",
+        "android_client_info": {
+          "package_name": "com.tyba.tyba_restaurant"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "455281700041-6sgij01qqq7n3199uvb59qbfsdvp7put.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAf4Qaa5UHvDVoLPalgpawaMTA_Ak3hsEM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "455281700041-6sgij01qqq7n3199uvb59qbfsdvp7put.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "455281700041-pn3o3084g649i20k9d1vijvo2qu3ccbg.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.tyba.tybaRestaurant"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
