@@ -6,7 +6,7 @@ class LoginButtonWidget extends GetView<LoginController> {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: controller.enableButton ? controller.doLogin : null,
+      onPressed: controller.doLogin,
       style: ButtonStyle(
         backgroundColor: MaterialStateProperty.all(Get.theme.primaryColor),
       ),

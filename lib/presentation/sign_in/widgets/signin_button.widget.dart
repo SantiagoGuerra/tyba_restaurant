@@ -6,7 +6,7 @@ class SignInButtonWidget extends GetView<SignInController> {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: controller.enableButton ? controller.signIn : null,
+      onPressed: controller.signIn,
       style: ButtonStyle(
         backgroundColor: MaterialStateProperty.all(Get.theme.primaryColor),
       ),
