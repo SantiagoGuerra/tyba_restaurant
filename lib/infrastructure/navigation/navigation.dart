@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
+import 'package:tyba_restaurant/infrastructure/navigation/bindings/controllers/login.controller.binding.dart';
+
 import '../../config.dart';
 import '../../presentation/screens.dart';
 import 'bindings/controllers/controllers_bindings.dart';
@@ -27,9 +29,24 @@ class EnvironmentsBadge extends StatelessWidget {
 class Nav {
   static List<GetPage> routes = [
     GetPage(
-      name: Routes.HOME,
+      name: Routes.login,
+      page: () => LoginScreen(),
+      binding: LoginControllerBinding(),
+    ),
+    GetPage(
+      name: Routes.home,
       page: () => HomeScreen(),
       binding: HomeControllerBinding(),
+    ),
+    GetPage(
+      name: Routes.SIGN_IN,
+      page: () => SignInScreen(),
+      binding: SignInControllerBinding(),
+    ),
+    GetPage(
+      name: Routes.SEARCH,
+      page: () => SearchScreen(),
+      binding: SearchControllerBinding(),
     ),
   ];
 }

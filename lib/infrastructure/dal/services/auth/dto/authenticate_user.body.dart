@@ -4,13 +4,13 @@ part 'authenticate_user.body.g.dart';
 
 @JsonSerializable()
 class AuthenticateUserBody {
-  String login;
+  String email;
   String password;
 
   AuthenticateUserBody({
-    required String login,
+    required String email,
     required String password,
-  })  : login = login.trim(),
+  })  : email = email.trim(),
         password = password.trim();
 
   factory AuthenticateUserBody.fromJson(Map<String, dynamic> json) =>
