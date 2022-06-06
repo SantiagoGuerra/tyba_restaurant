@@ -28,4 +28,9 @@ class DB {
             position: PositionModel(
                 lat: citiesMap[i]['lat'], lon: citiesMap[i]['lon'])));
   }
+
+  static Future<void> clean() async {
+    Database database = await _openDB();
+    database.execute("DELETE FROM cities");
+  }
 }

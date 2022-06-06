@@ -8,7 +8,6 @@ class LoginTextFieldWidget extends GetView<LoginController> {
     return Obx(
       () => TextFormField(
         onChanged: controller.email,
-        textAlign: TextAlign.center,
         focusNode: controller.loginFocus,
         textInputAction: TextInputAction.next,
         onFieldSubmitted: (_) {
@@ -18,7 +17,6 @@ class LoginTextFieldWidget extends GetView<LoginController> {
           border: const OutlineInputBorder(),
           errorText: controller.loginError.value,
           hintText: 'Correo Electronico',
-          hintStyle: Get.textTheme.headline6?.copyWith(color: Colors.black54),
         ),
       ),
     );

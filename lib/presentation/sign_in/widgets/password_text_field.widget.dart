@@ -8,7 +8,6 @@ class PasswordTextFieldWidget extends GetView<SignInController> {
     return Obx(
       () => TextFormField(
         onChanged: controller.password,
-        textAlign: TextAlign.center,
         obscureText: true,
         textInputAction: TextInputAction.done,
         onFieldSubmitted: (_) => controller.signIn(),
@@ -16,7 +15,6 @@ class PasswordTextFieldWidget extends GetView<SignInController> {
           border: const OutlineInputBorder(),
           errorText: controller.passwordError.value,
           hintText: 'Contraseña',
-          hintStyle: Get.textTheme.headline6?.copyWith(color: Colors.black54),
         ),
       ),
     );

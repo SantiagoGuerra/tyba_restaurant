@@ -11,12 +11,12 @@ class SignInButtonWidget extends GetView<SignInController> {
         backgroundColor: MaterialStateProperty.all(Get.theme.primaryColor),
       ),
       child: const SizedBox(
-        height: 60,
+        height: 52,
         width: double.infinity,
         child: Center(
           child: Text(
             'Crear Cuenta',
-            style: TextStyle(color: Colors.white, fontSize: 25),
+            style: TextStyle(color: Colors.white),
           ),
         ),
       ),

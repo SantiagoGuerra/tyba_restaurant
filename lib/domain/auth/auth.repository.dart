@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:tyba_restaurant/db.dart';
 import 'package:tyba_restaurant/domain/auth/models/user.model.dart';
 import 'package:tyba_restaurant/infrastructure/dal/services/auth/auth.service.dart';
 import 'package:tyba_restaurant/infrastructure/dal/services/auth/dto/authenticate_user.body.dart';
@@ -55,6 +56,7 @@ class AuthRepository {
     try {
       await _authService.logout();
       await _storage.erase();
+      await DB.clean();
     } catch (e) {
       rethrow;
     }

@@ -9,7 +9,6 @@ class SignInTextFieldWidget extends GetView<SignInController> {
     return Obx(
       () => TextFormField(
         onChanged: controller.email,
-        textAlign: TextAlign.center,
         focusNode: controller.loginFocus,
         textInputAction: TextInputAction.next,
         onFieldSubmitted: (_) {
@@ -19,7 +18,6 @@ class SignInTextFieldWidget extends GetView<SignInController> {
           border: const OutlineInputBorder(),
           errorText: controller.loginError.value,
           hintText: 'Correo Electronico',
-          hintStyle: Get.textTheme.headline6?.copyWith(color: Colors.black54),
         ),
       ),
     );

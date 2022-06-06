@@ -60,7 +60,6 @@ class HomeController extends GetxController {
         await _restaurantRepository.getRestaurants(lat, lon);
     restaurants(restaurantList);
     getCitiesFromHistorial();
-
     return restaurantList;
   }
 
@@ -69,7 +68,8 @@ class HomeController extends GetxController {
   }
 
   Future<void> getCitiesFromHistorial() async {
-    citiesFromHistorial.value = await DB.getCities();
+    List<CityModel> cities = await DB.getCities();
+    citiesFromHistorial.value = cities.reversed.toList();
   }
 
   void validateSearch(String val) {

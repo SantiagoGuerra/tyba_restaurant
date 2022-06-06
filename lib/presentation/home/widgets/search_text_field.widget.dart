@@ -11,16 +11,16 @@ class SearchTextFieldWidget extends GetView<HomeController> {
       onTap: () {
         Get.to(() => SearchScreen(), binding: HomeControllerBinding());
       },
-
-      // focusNode: controller.loginFocus,
       textInputAction: TextInputAction.search,
-
       decoration: InputDecoration(
+        contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
         fillColor: Colors.white,
         filled: true,
-        contentPadding: EdgeInsets.symmetric(vertical: 8, horizontal: 8),
+        isDense: true,
         hintText: 'Buscar Ciudad',
-        hintStyle: Get.textTheme.headline6?.copyWith(color: Colors.black54),
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(50.0),
+        ),
       ),
     );
   }

@@ -14,12 +14,13 @@ class SignInScreen extends GetView<SignInController> {
     return BaseWidget(
       child: Scaffold(
         appBar: AppBar(
+            title: Text("Registrarse"),
             leading: IconButton(
-          icon: Icon(Icons.arrow_back),
-          onPressed: () {
-            Get.back();
-          },
-        )),
+              icon: Icon(Icons.arrow_back),
+              onPressed: () {
+                Get.back();
+              },
+            )),
         body: Padding(
           padding: const EdgeInsets.all(30),
           child: Center(

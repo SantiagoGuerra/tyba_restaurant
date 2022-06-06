@@ -13,7 +13,6 @@ class SearchTextFieldWidget extends GetView<HomeController> {
         controller.city.value = value;
         await controller.getCities();
       },
-      // focusNode: controller.loginFocus,
       textInputAction: TextInputAction.search,
       onFieldSubmitted: (_) async {
         controller.city.value = "";
@@ -21,7 +20,6 @@ class SearchTextFieldWidget extends GetView<HomeController> {
       },
       decoration: InputDecoration(
         hintText: 'Buscar Ciudad',
-        hintStyle: Get.textTheme.headline6?.copyWith(color: Colors.black54),
       ),
     );
   }

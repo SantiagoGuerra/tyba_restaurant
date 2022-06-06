@@ -11,12 +11,12 @@ class LoginButtonWidget extends GetView<LoginController> {
         backgroundColor: MaterialStateProperty.all(Get.theme.primaryColor),
       ),
       child: const SizedBox(
-        height: 60,
         width: double.infinity,
+        height: 52,
         child: Center(
           child: Text(
-            'ENTER',
-            style: TextStyle(color: Colors.white, fontSize: 25),
+            'Entrar',
+            style: TextStyle(color: Colors.white),
           ),
         ),
       ),
