@@ -18,9 +18,10 @@ class SearchCitiesListWidget extends GetView<HomeController> {
               title: Text(city.address),
               leading: Icon(Icons.search),
               onTap: () {
+                city.save();
                 controller.getRestaurants(city.position.lat, city.position.lon);
-                controller.citiesFromHistorial.add(city);
                 controller.changeLocation(city);
+                controller.isSearching.value = false;
                 Get.to(() => HomeScreen(), binding: HomeControllerBinding());
               },
             );

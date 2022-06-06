@@ -14,7 +14,7 @@ class HistoryCitiesListWidget extends GetView<HomeController> {
             CityModel city = controller.citiesFromHistorial[index];
             return ListTile(
               title: Text(city.address),
-              leading: Icon(Icons.search),
+              leading: Icon(Icons.access_time_rounded),
               onTap: () {
                 print(city.position.lat);
                 print(city.position.lon);

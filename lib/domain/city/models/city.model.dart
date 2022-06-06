@@ -1,12 +1,5 @@
-import 'package:get/get.dart';
-import 'package:get_storage/get_storage.dart';
-import 'package:json_annotation/json_annotation.dart';
-import 'package:logger/logger.dart';
-import 'dart:convert';
+import 'package:tyba_restaurant/db.dart';
 
-part 'city.model.g.dart';
-
-@JsonSerializable()
 class CityModel {
   String address;
   PositionModel position;
@@ -17,13 +10,20 @@ class CityModel {
     return CityModel(address: data.address, position: data.position);
   }
 
-  factory CityModel.fromJson(Map<String, dynamic> json) =>
-      _$CityModelFromJson(json);
+  Map<String, dynamic> toMap() {
+    return {'address': address, 'lat': position.lat, 'lon': position.lon};
+  }
 
-  Map<String, dynamic> toJson() => _$CityModelToJson(this);
+  Future<void> save() async {
+    CityModel city = CityModel(address: address, position: position);
+    await DB.insert(city);
+  }
+
+  Future<List<CityModel>> getCities() async {
+    return DB.getCities();
+  }
 }
 
-@JsonSerializable()
 class PositionModel {
   double lat;
   double lon;
@@ -36,9 +36,4 @@ class PositionModel {
   factory PositionModel.fromData(dynamic data) {
     return PositionModel(lat: data.lat, lon: data.lon);
   }
-
-  factory PositionModel.fromJson(Map<String, dynamic> json) =>
-      _$PositionModelFromJson(json);
-
-  Map<String, dynamic> toJson() => _$PositionModelToJson(this);
 }

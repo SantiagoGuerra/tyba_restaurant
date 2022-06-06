@@ -1,7 +1,6 @@
 import 'package:tyba_restaurant/domain/core/abstractions/http_connect.interface.dart';
 import 'package:tyba_restaurant/domain/core/exceptions/default.exception.dart';
 import 'package:tyba_restaurant/infrastructure/dal/services/city/dto/city.response.dart';
-import 'package:tyba_restaurant/infrastructure/dal/services/restaurant/dto/restaurant.response.dart';
 
 class CityService {
   final IHttpConnect _connect;

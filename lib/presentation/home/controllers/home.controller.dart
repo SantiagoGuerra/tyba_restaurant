@@ -2,6 +2,7 @@ import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:logger/logger.dart';
+import 'package:tyba_restaurant/db.dart';
 import 'package:tyba_restaurant/domain/auth/auth.repository.dart';
 import 'package:tyba_restaurant/domain/city/city.repository.dart';
 import 'package:tyba_restaurant/domain/city/models/city.model.dart';
@@ -28,6 +29,7 @@ class HomeController extends GetxController {
     ever<String>(city, validateSearch);
     determinePosition();
     getRestaurants(lat.value, lon.value);
+    getCitiesFromHistorial();
   }
 
   @override
@@ -57,6 +59,8 @@ class HomeController extends GetxController {
     List<RestaurantModel> restaurantList =
         await _restaurantRepository.getRestaurants(lat, lon);
     restaurants(restaurantList);
+    getCitiesFromHistorial();
+
     return restaurantList;
   }
 
@@ -65,7 +69,7 @@ class HomeController extends GetxController {
   }
 
   Future<void> getCitiesFromHistorial() async {
-    citiesFromHistorial.value = [];
+    citiesFromHistorial.value = await DB.getCities();
   }
 
   void validateSearch(String val) {
